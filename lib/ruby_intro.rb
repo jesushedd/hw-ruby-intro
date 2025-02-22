@@ -48,14 +48,24 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant?(s)
   # YOUR CODE HERE
+  regx = /^[a-zA-Z&&[^aeiouAEIOU]]/
+  regx.match?(s)
 end
 
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
+  rgx = /^[01]+/
+  if !rgx.match?(s)
+    return false
+  end
+  num = s.to_i(2)
+  puts(num)
+  num % 4 == 0
 end
 
 # Part 3
