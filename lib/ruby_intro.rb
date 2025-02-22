@@ -9,10 +9,39 @@ end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
+  if arr.length == 0
+    return 0    
+  end
+  if arr.length == 1
+    return arr[0]    
+  end
+  arr = arr.sort
+  arr[-1] + arr[-2]
 end
 
 def sum_to_n?(arr, n)
   # YOUR CODE HERE
+  if arr.length < 2
+    return false
+  end
+  arr = arr.sort
+
+  a = 0
+  b = arr.length - 1
+
+  sum = 0
+  while a < b
+    sum = arr[a] + arr[b]
+    if sum > n
+      b -= 1      
+    elsif sum < n
+      a += 1     
+    else
+      return true
+    end
+  end
+
+  false
 end
 
 # Part 2
