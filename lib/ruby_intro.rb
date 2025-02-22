@@ -59,7 +59,7 @@ end
 
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
-  rgx = /^[01]+/
+  rgx = /^[01]+$/
   if !rgx.match?(s)
     return false
   end
