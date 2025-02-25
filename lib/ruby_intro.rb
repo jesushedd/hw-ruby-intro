@@ -72,4 +72,36 @@ end
 
 class BookInStock
   # YOUR CODE HERE
+  
+    def initialize(isbn_number, price)
+      if isbn_number.eql? ""
+        raise ArgumentError,"Invalid ISBN  (empty)"        
+      end
+
+      if price <= 0
+        raise ArgumentError.new "Negative price"
+      end
+      @isbn = isbn_number
+      @price = price.to_f   
+    end
+
+    def isbn
+      @isbn
+    end
+
+    def isbn=(new_isbn)
+      @isbn = new_isbn
+    end
+
+    def price
+      @price
+    end
+
+    def price=(new_price)
+      @price = new_price
+    end
+
+    def price_as_string
+      "$%.2f" % @price
+    end
 end
